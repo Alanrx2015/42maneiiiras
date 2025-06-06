@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight, MessageCircle, Target, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { ChevronRight, MessageCircle, Target, Zap, CheckCircle, ArrowRight, Gift } from 'lucide-react';
 
 interface Question {
   id: number;
@@ -99,9 +99,26 @@ function App() {
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 🚨 Você Sabe Puxar Assunto Com Uma Mulher Sem Ser Chato ou Forçado?
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed">
+              <p className="text-xl text-blue-100 leading-relaxed mb-8">
                 Descubra em menos de 60 segundos se você está fazendo tudo errado na hora de puxar assunto – e como corrigir isso com 42 formas prontas para usar!
               </p>
+            </div>
+
+            {/* Bonus Offer */}
+            <div className="bg-gradient-to-r from-yellow-500/20 to-orange-600/20 border-2 border-yellow-400/50 rounded-2xl p-6 mb-8 animate-pulse">
+              <div className="flex items-center justify-center mb-3">
+                <Gift className="w-8 h-8 text-yellow-400 mr-2" />
+                <span className="text-yellow-300 font-bold text-xl">BÔNUS EXCLUSIVO</span>
+              </div>
+              <p className="text-white font-semibold text-lg mb-2">
+                🎁 Complete o quiz até o final e ganhe:
+              </p>
+              <p className="text-yellow-200 text-base">
+                <strong>"10 Frases de Abertura Infalíveis"</strong> - Um guia extra com as melhores primeiras frases que nunca falham!
+              </p>
+              <div className="text-yellow-300 text-sm mt-2 font-medium">
+                ⚡ Disponível apenas para quem terminar o quiz!
+              </div>
             </div>
             
             <button
@@ -109,7 +126,7 @@ function App() {
               className="group bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-2xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl inline-flex items-center gap-3"
             >
               <Zap className="w-6 h-6" />
-              Começar Quiz Agora
+              Começar Quiz e Ganhar Bônus
               <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
             
@@ -145,6 +162,16 @@ function App() {
               ></div>
             </div>
           </div>
+
+          {/* Bonus Reminder */}
+          {currentQuestion === questions.length - 1 && (
+            <div className="bg-gradient-to-r from-yellow-500/10 to-orange-600/10 border border-yellow-400/30 rounded-2xl p-4 mb-6 text-center">
+              <Gift className="w-6 h-6 text-yellow-400 mx-auto mb-2" />
+              <p className="text-yellow-200 text-sm font-medium">
+                🎁 Última pergunta! Seu bônus "10 Frases de Abertura Infalíveis" está quase pronto!
+              </p>
+            </div>
+          )}
 
           <div className={`bg-white/10 backdrop-blur-lg rounded-3xl p-6 md:p-8 shadow-2xl border border-white/20 transition-all duration-300 ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
             <div className="mb-8">
@@ -202,6 +229,20 @@ function App() {
               </p>
             </div>
 
+            {/* Bonus Unlocked */}
+            <div className="bg-gradient-to-r from-yellow-500/20 to-orange-600/20 border-2 border-yellow-400/50 rounded-2xl p-6 mb-6">
+              <div className="flex items-center justify-center mb-3">
+                <Gift className="w-8 h-8 text-yellow-400 mr-2" />
+                <span className="text-yellow-300 font-bold text-xl">BÔNUS DESBLOQUEADO! 🎉</span>
+              </div>
+              <p className="text-white font-semibold text-lg mb-2">
+                Parabéns! Você ganhou o bônus:
+              </p>
+              <p className="text-yellow-200 text-base font-medium">
+                📋 "10 Frases de Abertura Infalíveis" - GRÁTIS junto com sua compra!
+              </p>
+            </div>
+
             <div className="bg-gradient-to-r from-green-500/20 to-emerald-600/20 border-2 border-green-400/50 rounded-2xl p-6 mb-8">
               <div className="text-green-300 font-bold text-2xl mb-2">
                 Oferta Especial
@@ -209,8 +250,11 @@ function App() {
               <div className="text-white text-3xl font-bold">
                 Apenas R$ 19,90
               </div>
-              <div className="text-green-200 text-sm">
+              <div className="text-green-200 text-sm mb-2">
                 (menos que um lanche!)
+              </div>
+              <div className="text-yellow-300 text-sm font-medium">
+                + Bônus "10 Frases de Abertura Infalíveis" GRÁTIS!
               </div>
             </div>
 
@@ -221,7 +265,7 @@ function App() {
               className="group bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-4 px-8 rounded-2xl text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl inline-flex items-center gap-3 mb-4"
             >
               <CheckCircle className="w-6 h-6" />
-              ✅ Quero Começar a Conversar do Jeito Certo
+              ✅ Quero Começar a Conversar do Jeito Certo + Bônus
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </a>
 
